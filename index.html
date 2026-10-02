@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am sorry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0614;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+        }
+
+        /* النص المتوهج والمتحرك */
+        .sorry-text {
+            color: #fff;
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            z-index: 10;
+            text-align: center;
+            /* تأثير التوهج */
+            text-shadow: 
+                0 0 10px #ff2a75,
+                0 0 20px #ff2a75,
+                0 0 40px #ff2a75,
+                0 0 80px #ff2a75;
+            /* إضافة حركة النبض */
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        /* حركة التوهج والنبض للعبارة */
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 
+                    0 0 10px #ff2a75,
+                    0 0 20px #ff2a75,
+                    0 0 40px #ff2a75,
+                    0 0 80px #ff2a75;
+            }
+            50% {
+                transform: scale(1.08);
+                text-shadow: 
+                    0 0 15px #ff6392,
+                    0 0 30px #ff6392,
+                    0 0 60px #ff6392,
+                    0 0 100px #ff6392;
+            }
+        }
+
+        /* القلوب المتحركة حول النص */
+        .heart {
+            position: absolute;
+            color: #ff2a75;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp 6s linear infinite;
+            opacity: 0;
+        }
+
+        /* تحديد مواعيد وأحجام مختلفة للقلوب */
+        .heart:nth-child(1) { left: 15%; font-size: 24px; animation-delay: 0s; animation-duration: 5s; }
+        .heart:nth-child(2) { left: 25%; font-size: 32px; animation-delay: 2s; animation-duration: 7s; }
+        .heart:nth-child(3) { left: 35%; font-size: 18px; animation-delay: 1s; animation-duration: 4s; }
+        .heart:nth-child(4) { left: 45%; font-size: 28px; animation-delay: 3s; animation-duration: 6s; }
+        .heart:nth-child(5) { left: 55%; font-size: 22px; animation-delay: 0.5s; animation-duration: 5.5s; }
+        .heart:nth-child(6) { left: 65%; font-size: 36px; animation-delay: 2.5s; animation-duration: 6.5s; }
+        .heart:nth-child(7) { left: 75%; font-size: 20px; animation-delay: 1.5s; animation-duration: 4.5s; }
+        .heart:nth-child(8) { left: 85%; font-size: 30px; animation-delay: 3.5s; animation-duration: 5.8s; }
+
+        /* حركة صعود القلوب واختفائها تدريجياً */
+        @keyframes floatUp {
+            0% {
+                bottom: -10%;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.8;
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: translateX(50px) rotate(360deg);
+            }
+        }
+
+        /* تحسين مظهر النص على الشاشات الصغيرة (الهواتف) */
+        @media (max-width: 600px) {
+            .sorry-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- النص في المنتصف -->
+    <div class="sorry-text">I am sorry</div>
+
+    <!-- القلوب المتحركة -->
+    <div class="heart">❤️</div>
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">❤️</div>
+    <div class="heart">💗</div>
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">❤️</div>
+
+</body>
+</html>
